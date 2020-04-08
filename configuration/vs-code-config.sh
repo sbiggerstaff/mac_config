@@ -17,3 +17,4 @@ code --install-extension redhat.vscode-yaml
 code --install-extension stevemoser.xcode-keybindings
 code --install-extension mariomatheu.syntax-project-pbxproj
 code --install-extension mohsen1.prettify-json
+code --install-extension vscode-icons-team.vscode-icons

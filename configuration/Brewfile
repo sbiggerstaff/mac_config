@@ -86,6 +86,9 @@ cask 'imageoptim'
 cask 'openvpn-connect'
 cask 'balenaetcher'
 cask 'sip'
+cask 'robo-3t'
+cask 'steam'
+cask 'origin'
 # cask 'google-drive-file-stream' # Using backup and sync, not this. 
 
 # Quicklook
