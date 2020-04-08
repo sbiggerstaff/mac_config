@@ -29,6 +29,9 @@ sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
 defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleInterfaceStyle -string "Dark"
 
+# Use AirDrop over every interface. srsly this should be a default.
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -122,6 +125,9 @@ defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
 
 # Set screensaver idle time to 1 hour
 defaults -currentHost write com.apple.screensaver idleTime -int 3600
+
+# Wallpaper
+wallpaper 'resources/wallpaper.jpg'
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -221,6 +227,10 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
+# Auto Expand save dialogue
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+
 
 ###############################################################################
 # Configure System Menu Bar                                                   #
@@ -294,6 +304,11 @@ defaults write org.m0k.transmission RandomPort -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# Setup Command line tools for the next tasks                                 #
+###############################################################################
+sudo xcode-select --install
+
+###############################################################################
 # Gems                                                                        #
 ###############################################################################
 
@@ -306,7 +321,7 @@ sudo gem install cocoapods-deintegrate
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ###############################################################################
-# Homebrew                                                                    #
+# Homebrew, Apps, Utilities, and Shell                                        #
 ###############################################################################
 
 sudo chown -R $(whoami) /usr/local/share/man/man8
@@ -314,6 +329,13 @@ sudo chown -R $(whoami) /usr/local/share/man/man8
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew bundle
+
+# Switch Zsh to the version installed by brew
+sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+chsh -s /usr/local/bin/zsh
+
+# Install latest node via NVM
+nvm install node
 
 ###############################################################################
 # Kill affected applications                                                  #

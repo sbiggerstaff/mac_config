@@ -3,11 +3,12 @@ cask_args appdir: '/Applications'
 
 # install packages
 tap 'homebrew/cask-fonts'
-# Use these over ones shipped with MacOS?
-# brew 'zsh'
-# brew 'bash'
-# brew 'ruby'
-# brew 'git'
+
+brew 'zsh'
+brew 'bash'
+# Use this over one shipped with MacOS or from a rbenv equivilent?
+#brew 'ruby'
+brew 'git'
 # By default, binaries installed by gem will be placed into:
 #     $(brew --prefix)/lib/ruby/gems//bin
 
