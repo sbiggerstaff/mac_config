@@ -231,6 +231,9 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
+# Zoom on tapping title bar 
+defaults write -g AppleActionOnDoubleClick -string "Maximize"
+
 
 ###############################################################################
 # Configure System Menu Bar                                                   #
@@ -336,6 +339,13 @@ chsh -s /usr/local/bin/zsh
 
 # Install latest node via NVM
 nvm install node
+
+###############################################################################
+# Configure Visual Studio	                                                  #
+###############################################################################
+
+vscode-config.sh
+vscode-sourcekit-lsp.sh
 
 ###############################################################################
 # Kill affected applications                                                  #
