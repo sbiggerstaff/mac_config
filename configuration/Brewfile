@@ -1,0 +1,140 @@
+# specify a directory to install
+cask_args appdir: '/Applications'
+
+# install packages
+tap 'homebrew/cask-fonts'
+# Use these over ones shipped with MacOS?
+# brew 'zsh'
+# brew 'bash'
+# brew 'ruby'
+# brew 'git'
+# brew 'nvm'
+# brew 'node'
+# By default, binaries installed by gem will be placed into:
+#     $(brew --prefix)/lib/ruby/gems//bin
+
+# You may want to add this to your PATH.
+
+brew 'tree'
+brew 'cocoapods'
+brew 'wget'
+brew 'swiftlint'
+brew 'imagemagick'
+brew 'iblinter'
+brew 'jsonlint'
+brew 'git-flow'
+brew 'mas'
+brew 'youtube-dl'
+brew 'ffmpeg'
+brew 'zsh-completions'
+brew 'bash-completion'
+brew 'lame'
+brew 'speedtest-cli'
+brew 'git-extras'
+#To load Zsh completions, add the following to your .zschrc:
+#source $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
+
+# Casks
+cask 'google-chrome'
+cask 'java'
+cask 'alfred'
+cask 'fastlane'
+cask 'spotify'
+cask '1password'
+cask 'iterm2'
+cask 'calibre'
+cask 'visual-studio-code'
+cask 'discord'
+cask 'whatsapp'
+cask 'sourcetree'
+cask 'google-backup-and-sync'
+cask 'charles'
+cask 'ivpn'
+cask 'macdown'
+cask 'vlc'
+cask 'postman'
+cask 'parallels'
+cask 'sf-symbols'
+cask 'omnifocus'
+cask 'transmission'
+cask 'transmit'
+cask 'tunnelblick'
+cask 'twitch'
+cask 'pusher'
+cask 'proxyman'
+cask 'paw'
+cask 'fauxpas'
+cask 'wireshark'
+cask 'simsim'
+cask 'little-snitch'
+cask 'audio-hijack'
+cask 'cleanmymac'
+cask 'gemini'
+cask 'appcleaner'
+cask 'bartender'
+cask 'moom'
+cask 'the-unarchiver'
+cask 'virtualbox'
+cask 'android-studio'
+cask 'android-platform-tools'
+cask 'karabiner-elements'
+cask 'ifunbox'
+cask 'corona-tracker'
+cask 'androidtool'
+cask 'synergy'
+cask 'imageoptim'
+cask 'openvpn-connect'
+cask 'balenaetcher'
+cask 'sip'
+# cask 'google-drive-file-stream' # Using backup and sync, not this. 
+
+# Quicklook
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'qlprettypatch'
+cask 'quicklook-csv', args: ['no-quarantine']
+cask 'qlimagesize'
+cask 'WebPQuickLook'
+cask 'suspicious-package'
+cask 'quicklookase'
+cask 'qlvideo'
+cask 'provisionql'
+cask 'qlcolorcode'
+cask 'qlplayground'
+cask 'qlmobi'
+cask 'quicklookapk'
+
+# Fonts
+cask 'font-jetbrains-mono'
+cask 'font-inconsolata'
+cask 'font-ubuntu'
+cask 'font-fira-code'
+cask 'font-hack-nerd-font'
+cask 'font-source-code-pro'
+cask 'font-sourcecodepro-nerd-font'
+cask 'font-firacode-nerd-font'
+
+
+# Mac App Store
+mas "Xcode", id: 497799835
+mas "iMovie", id: 408981434
+mas "Pages", id: 409201541
+mas "Numbers", id: 409203825
+mas "Things", id: 904280696
+mas "Pushever", id: 1455738387
+mas "BetterSnapTool", id: 417375580
+mas "Keynote", id: 409183694
+mas "The Unarchiver", id: 425424353
+mas "Pixelmator", id: 407963104
+mas "CiderTV", id: 1065907486
+mas "LocalSites", id: 1289088707
+mas "Tot", id: 1491071483
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Transporter", id: 1450874784
+mas "Pocket", id: 568494494
+mas "Colours for Hue", id: 581915465
+
+# Safari Extensions
+mas "Save to Pocket", id: 1477385213
+mas "Honey", id: 1472777122

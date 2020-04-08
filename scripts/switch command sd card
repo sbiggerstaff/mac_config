@@ -1,0 +1,1 @@
+sudo diskutil eraseDisk FAT32 SDSWITCH MBRFormat /dev/disk2
