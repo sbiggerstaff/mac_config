@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "yaml.schemas": {
+        "file:///toc.schema.json": "/toc\\.yml/i"
+    },
+    "team.showWelcomeMessage": false,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrains Mono, ubuntu, Source Code Pro, Fira Code"
+}
