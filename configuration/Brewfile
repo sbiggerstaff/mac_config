@@ -8,14 +8,13 @@ tap 'homebrew/cask-fonts'
 # brew 'bash'
 # brew 'ruby'
 # brew 'git'
-# brew 'nvm'
-# brew 'node'
 # By default, binaries installed by gem will be placed into:
 #     $(brew --prefix)/lib/ruby/gems//bin
 
 # You may want to add this to your PATH.
 
 brew 'tree'
+brew 'nvm'
 brew 'cocoapods'
 brew 'wget'
 brew 'swiftlint'
