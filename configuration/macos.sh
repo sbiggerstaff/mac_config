@@ -348,6 +348,7 @@ nvm install node
 # Configure Visual Studio	                                                  #
 ###############################################################################
 
+ln -s ~/.dotfiles/VSCode/* ~/Library/Application\ Support/Code/User/
 vscode-config.sh
 vscode-sourcekit-lsp.sh
 
@@ -357,6 +358,12 @@ vscode-sourcekit-lsp.sh
 
 mkdir Projects
 mkdir 
+
+###############################################################################
+# Ruby Gems					                                                  #
+###############################################################################
+
+gem install cocoapods-deintegrate
 
 ###############################################################################
 # Kill affected applications                                                  #

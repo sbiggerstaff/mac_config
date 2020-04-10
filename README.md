@@ -1,4 +1,5 @@
 # Mac set up and configuration files
+
 1. Follow initial setup wizard on clean mac install.
 2. Connect to a network if not done so as part of the wizard.
 3. Make sure the OS is up to date.
