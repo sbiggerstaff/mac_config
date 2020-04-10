@@ -31,12 +31,16 @@ brew 'bash-completion'
 brew 'lame'
 brew 'speedtest-cli'
 brew 'git-extras'
+brew 'gradle'
+brew 'maven'
+brew 'ant'
 #To load Zsh completions, add the following to your .zschrc:
 #source $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # Casks
 cask 'google-chrome'
 cask 'java'
+cask 'oracle-jdk'
 cask 'alfred'
 cask 'fastlane'
 cask 'spotify'
