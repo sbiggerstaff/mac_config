@@ -15,7 +15,7 @@
     - SQLite Browser
     - SimMagnifier
     - Stackwalker
-    - Control Room https://github.com/twostraws/ControlRoom?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=web&utm_source=iOS%2BDev%2BWeekly%2BIssue%2B443)
+    - Control Room https://github.com/twostraws/ControlRoom?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=web&utm_source=iOS%2BDev%2BWeekly%2BIssue%2B443
     - XBLint/IBLint
     - MakeAppIcon
     - Ad Blocker
@@ -24,6 +24,9 @@
 9. Login to Email/Contacts/Calendar accounts.
 10. Set up Touch ID.
 11. Remove Siri.
-12. Sharing Settings (screen sharing and possibly file sharing)
-13. Turn on Filevault
-
+12. Sharing Settings (screen sharing and possibly file sharing).
+13. Turn on Filevault.
+14. Update iTerm font.
+15. Set Xcode font.
+16. Install pulse secure if on work machine.
+17. Change source tree default project location to ~/Projects/

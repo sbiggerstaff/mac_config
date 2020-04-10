@@ -50,7 +50,6 @@ cask 'visual-studio-code'
 cask 'discord'
 cask 'whatsapp'
 cask 'sourcetree'
-cask 'google-backup-and-sync'
 cask 'charles'
 cask 'ivpn'
 cask 'macdown'
@@ -93,7 +92,9 @@ cask 'sip'
 cask 'robo-3t'
 cask 'steam'
 cask 'origin'
-# cask 'google-drive-file-stream' # Using backup and sync, not this. 
+cask 'google-backup-and-sync' # Comment if on work machine
+# cask 'google-chat' # Install if on work machine
+# cask 'google-drive-file-stream' # Install if on work machine
 
 # Quicklook
 cask 'qlstephen'
