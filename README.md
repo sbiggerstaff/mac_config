@@ -28,3 +28,4 @@
 16. Set up Dock and sidebar the way you want, and export it to the repo if required (catalina updated this so I can't export till I'm on catalina)
 17. Configure startup items.
 18. Extensions and accessability permissions for apps in system preferences.
+19. Install development certificates.

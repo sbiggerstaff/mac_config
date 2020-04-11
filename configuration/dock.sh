@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # remove all icons from the dock
 defaults write com.apple.dock persistent-apps -array
 
