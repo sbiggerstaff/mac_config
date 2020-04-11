@@ -29,15 +29,17 @@ brew 'zsh-completions'
 brew 'bash-completion'
 brew 'lame'
 brew 'speedtest-cli'
-brew 'git-extras'
 brew 'gradle'
 brew 'maven'
 brew 'ant'
+brew 'iblinter'
+brew 'git-extras'
 #To load Zsh completions, add the following to your .zschrc:
 #source $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # Casks
 cask 'google-chrome'
+cask 'sqlitestudio'
 cask 'java'
 cask 'oracle-jdk'
 cask 'alfred'

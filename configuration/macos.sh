@@ -244,6 +244,8 @@ defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 # Zoom on tapping title bar 
 defaults write -g AppleActionOnDoubleClick -string "Maximize"
 
+. ~/mac_config/configuration/finder_sidebar.sh
+. ~/mac_config/configuration/dock.sh
 
 ###############################################################################
 # Configure System Menu Bar                                                   #
