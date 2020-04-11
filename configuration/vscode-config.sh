@@ -1,3 +1,5 @@
+#!/bin/env zsh
+
 code --install-extension smobile.vscode-appcenter
 code --install-extension ms-vscode.azure-account
 code --install-extension rebornix.ruby

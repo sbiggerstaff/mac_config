@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # ~/.macos
 
@@ -364,6 +364,20 @@ mkdir
 ###############################################################################
 
 gem install cocoapods-deintegrate
+
+###############################################################################
+# General Dotfiles			                                                  #
+###############################################################################
+
+ln -s ~/mac_config/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/mac_config/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/mac_config/.dotfiles/Alfred.alfredpreferences ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences
+
+###############################################################################
+# Github + SSH 				                                                  #
+###############################################################################
+
+. ~/mac_config/configuration/githubssh.sh
 
 ###############################################################################
 # Kill affected applications                                                  #
