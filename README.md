@@ -31,3 +31,7 @@
 15. Set Xcode font.
 16. Install pulse secure if on work machine.
 17. Change source tree default project location to ~/Projects/
+18. Remap Alfred to ⌘ space
+19. Remap 1password to ⌃ space 
+20. Remap Things to ⌃ o 
+21. Remap Tot to ⌃ t

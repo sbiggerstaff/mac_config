@@ -36,6 +36,16 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+# Configure Keyboard shortcuts
+sudo cp -rf ~/mac_config/configuration/com.apple.symbolichotkeys.plist ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# Control strip
+defaults write com.apple.controlstrip.plist MiniCustomized -array \
+    "com.apple.system.brightness"\
+    "com.apple.system.volume"\
+    "com.apple.system.mute"\
+    "com.apple.system.screen-lock"
+
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
