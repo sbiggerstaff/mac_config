@@ -35,3 +35,11 @@
 19. Remap 1password to ⌃ space 
 20. Remap Things to ⌃ o 
 21. Remap Tot to ⌃ t
+22. Remap Bettersnaptool ⌃ ⌘ arrows 
+23. Open up iTerm2 preferences (⌘ + ,) -> Profiles -> Keys -> Click on + icon (add new Keyboard shortcut).
+    shortcut	action	Esc+
+    ⌘←	Send Escape Sequence	OH
+    ⌘→	Send Escape Sequence	OF
+    ⌥←	Send Escape Sequence	b
+    ⌥→	Send Escape Sequence	f
+24. Sip hide pallet dock

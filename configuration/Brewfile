@@ -92,6 +92,7 @@ cask 'sip'
 cask 'robo-3t'
 cask 'steam'
 cask 'origin'
+cask 'karabiner-elements'
 cask 'google-backup-and-sync' # Comment if on work machine
 # cask 'google-chat' # Install if on work machine
 # cask 'google-drive-file-stream' # Install if on work machine
