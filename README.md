@@ -29,3 +29,4 @@
 17. Configure startup items.
 18. Extensions and accessability permissions for apps in system preferences.
 19. Install development certificates.
+20. Enable third party plugins in 1password.
