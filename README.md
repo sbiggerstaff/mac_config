@@ -2,7 +2,7 @@
 
 1. Follow initial setup wizard on clean mac install.
 2. Make sure the OS is up to date & sign into the mac app store
-3. Run macos.sh
+3. Run macos.sh 
 4. Download Apps not available on brew cask, or mac app store.
     - [Unifi](https://www.ui.com/download/unifi/unifi-ap-ac-lite)
     - [Unifi Discover](https://www.ui.com/download/utilities/default/default/ubiquiti-discovery-tool-chrome-app)
@@ -30,3 +30,4 @@
 18. Extensions and accessability permissions for apps in system preferences.
 19. Install development certificates.
 20. Enable third party plugins in 1password.
+21. Add username/password/host to mount-nas.sh if it is to be used to mount network storage, then add it to start up with applescript.
