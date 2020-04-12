@@ -7,3 +7,4 @@ git clone git@github.com:sbiggerstaff/mileagecalc.git ~/Projects/mileagecalc
 git clone git@github.com:sbiggerstaff/expensalitics.git ~/Projects/expensalitics
 git clone git@github.com:sbiggerstaff/tokenscalc.git ~/Projects/tokenscalc
 git clone git@github.com:sbiggerstaff/IOU.git ~/Projects/iou
+git clone git@github.com:sbiggerstaff/teslashortcuts.git ~/Projects/teslashortcuts
