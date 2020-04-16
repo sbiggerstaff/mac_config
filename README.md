@@ -31,3 +31,7 @@
 19. Install development certificates.
 20. Enable third party plugins in 1password.
 21. Add username/password/host to mount-nas.sh if it is to be used to mount network storage, then add it to start up with applescript.
+22. Download Chrome extensions
+    - Downitall
+    - Adblock
+    - 1password
