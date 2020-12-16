@@ -1,165 +1,111 @@
 # specify a directory to install
-cask_args appdir: '/Applications'
+cask_args appdir: "/Applications"
 
-# install packages
-tap 'homebrew/cask-fonts'
-brew 'zsh'
-brew 'bash'
-# Use this over one shipped with MacOS or from a rbenv equivilent?
-#brew 'ruby'
-brew 'git'
-# By default, binaries installed by gem will be placed into:
-#     $(brew --prefix)/lib/ruby/gems//bin
+# Install Prerequisites
+tap "homebrew/cask-fonts"
+brew "mas"
+mas "Xcode", id: 497799835
 
-# You may want to add this to your PATH.
-
-brew 'tree'
-brew 'nvm'
-brew 'cocoapods'
-brew 'wget'
-brew 'swiftlint'
-brew 'imagemagick'
-brew 'iblinter'
-brew 'jsonlint'
-brew 'git-flow'
-brew 'mas'
-brew 'youtube-dl'
-brew 'ffmpeg'
-brew 'zsh-completions'
-brew 'bash-completion'
-brew 'lame'
-brew 'speedtest-cli'
-brew 'gradle'
-brew 'maven'
-brew 'ant'
-brew 'iblinter'
-brew 'git-extras'
-#To load Zsh completions, add the following to your .zschrc:
-#source $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
+# Brews
+brew "svn"
+brew "swiftlint"
+brew "imagemagick"
+brew "iblinter"
+brew "jsonlint"
+brew "git-flow"
+brew "youtube-dl"
+brew "ffmpeg"
+brew "speedtest-cli"
+brew "git-extras"
+brew "fastlane"
 
 # Casks
-cask 'google-chrome'
-cask 'sqlitestudio'
-cask 'java'
-cask 'oracle-jdk'
-cask 'alfred'
-cask 'fastlane'
-cask 'spotify'
-cask '1password'
-cask 'iterm2'
-cask 'calibre'
-cask 'visual-studio-code'
-cask 'discord'
-cask 'whatsapp'
-cask 'sourcetree'
-cask 'charles'
-cask 'ivpn'
-cask 'macdown'
-cask 'vlc'
-cask 'postman'
-cask 'parallels'
-cask 'sf-symbols'
-cask 'omnifocus'
-cask 'transmission'
-cask 'transmit'
-cask 'tunnelblick'
-cask 'twitch'
-cask 'pusher'
-cask 'proxyman'
-cask 'paw'
-cask 'fauxpas'
-cask 'wireshark'
-cask 'simsim'
-cask 'little-snitch'
-cask 'audio-hijack'
-cask 'cleanmymac'
-cask 'gemini'
-cask 'istat-menus'
-cask 'appcleaner'
-cask 'bartender'
-cask 'moom'
-cask 'the-unarchiver'
-cask 'virtualbox'
-cask 'android-studio'
-cask 'android-platform-tools'
-cask 'karabiner-elements'
-cask 'ifunbox'
-cask 'corona-tracker'
-cask 'androidtool'
-cask 'synergy'
-cask 'imageoptim'
-cask 'openvpn-connect'
-cask 'balenaetcher'
-cask 'sip'
-cask 'robo-3t'
-cask 'steam'
-cask 'origin'
-cask 'plex'
-cask 'karabiner-elements'
-cask 'google-backup-and-sync' # Comment if on work machine
-# cask 'google-chat' # Install if on work machine
-# cask 'google-drive-file-stream' # Install if on work machine
+cask "sqlitestudio"
+cask "alfred"
+cask "spotify"
+cask "1password"
+cask "iterm2"
+cask "calibre"
+cask "visual-studio-code"
+cask "discord"
+cask "whatsapp"
+cask "sourcetree"
+cask "charles"
+cask "macdown"
+cask "vlc"
+cask "postman"
+cask "parallels"
+cask "sf-symbols"
+cask "omnifocus"
+cask "transmission"
+cask "transmit"
+cask "tunnelblick"
+cask "twitch"
+cask "pusher"
+cask "proxyman"
+cask "paw"
+cask "fauxpas"
+cask "wireshark"
+cask "simsim"
+cask "little-snitch"
+cask "audio-hijack"
+cask "istat-menus"
+cask "appcleaner"
+cask "bartender"
+cask "moom"
+cask "the-unarchiver"
+cask "ifunbox"
+cask "imageoptim"
+cask "openvpn-connect"
+cask "balenaetcher"
+cask "sip"
+cask "robo-3t"
+cask "steam"
+cask "origin"
+cask "plex"
+cask "google-backup-and-sync" # Comment if on work machine
 
 # Quicklook
-cask 'qlstephen'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'qlprettypatch'
-cask 'quicklook-csv', args: ['no-quarantine']
-cask 'qlimagesize'
-cask 'WebPQuickLook'
-cask 'suspicious-package'
-cask 'quicklookase'
-cask 'qlvideo'
-cask 'provisionql'
-cask 'qlcolorcode'
-cask 'qlplayground'
-cask 'qlmobi'
-cask 'quicklookapk'
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "qlprettypatch"
+cask "quicklook-csv"
+cask "qlimagesize"
+cask "WebPQuickLook"
+cask "suspicious-package"
+cask "quicklookase"
+cask "qlvideo"
+cask "provisionql"
+cask "qlcolorcode"
+cask "qlplayground"
+cask "qlmobi"
+cask "quicklookapk"
 
 # Fonts
-cask 'font-jetbrains-mono'
-cask 'font-jetbrainsmono-nerd-font-mono'
-cask 'font-jetbrainsmono-nerd-font'
-cask 'font-inconsolata'
-cask 'font-inconsolata-dz-for-powerline'
-cask 'font-inconsolata-for-powerline-bold'
-cask 'font-inconsolata-for-powerline'
-cask 'font-inconsolata-g-for-powerline'
-cask 'font-inconsolata-g'
-cask 'font-inconsolata-lgc'
-cask 'font-inconsolata-nerd-font-mono'
-cask 'font-inconsolata-nerd-font'
-cask 'font-inconsolatago-nerd-font-mono'
-cask 'font-inconsolatago-nerd-font'
-cask 'font-inconsolatalgc-nerd-font-mono'
-cask 'font-inconsolatalgc-nerd-font'
-cask 'font-fira-code'
-cask 'font-fira-mono'
-cask 'font-fira-sans'
-cask 'font-firacode-nerd-font-mono'
-cask 'font-firacode-nerd-font'
-cask 'font-firamono-nerd-font-mono'
-cask 'font-fira-mono-for-powerline'
-cask 'font-firamono-nerd-font'
-cask 'font-hack-nerd-font'
-cask 'font-hackgen'
-cask 'font-hack-nerd-font-mono'
-cask 'font-hack'
-cask 'font-source-code-pro'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-sourcecodepro-nerd-font-mono'
-cask 'font-sourcecodepro-nerd-font'
-cask 'font-firacode-nerd-font'
-cask 'font-ubuntu'
-cask 'font-ubuntu-nerd-font-mono'
-cask 'font-ubuntu-nerd-font'
-cask 'font-ubuntumono-nerd-font-mono'
-cask 'font-ubuntumono-nerd-font'
-cask 'font-ubuntu-mono-derivative-powerline'
+cask "font-jetbrains-mono"
+cask "font-inconsolata"
+cask "font-inconsolata-dz-for-powerline"
+cask "font-inconsolata-for-powerline-bold"
+cask "font-inconsolata-for-powerline"
+cask "font-inconsolata-g-for-powerline"
+cask "font-inconsolata-g"
+cask "font-inconsolata-lgc"
+cask "font-inconsolata-nerd-font"
+cask "font-fira-code"
+cask "font-fira-mono"
+cask "font-fira-sans"
+cask "font-fira-mono-for-powerline"
+cask "font-hack-nerd-font"
+cask "font-hackgen"
+cask "font-hack"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+cask "font-ubuntu"
+cask "font-ubuntu-nerd-font"
+cask "font-ubuntu-mono-derivative-powerline"
 
 # Mac App Store
-mas "Xcode", id: 497799835
 mas "iMovie", id: 408981434
 mas "Pages", id: 409201541
 mas "Numbers", id: 409203825
@@ -175,8 +121,41 @@ mas "Tot", id: 1491071483
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Transporter", id: 1450874784
 mas "Pocket", id: 568494494
-mas "Colours for Hue", id: 581915465
 
 # Safari Extensions
 mas "Save to Pocket", id: 1477385213
 mas "Honey", id: 1472777122
+
+# Other optional items
+# brew "zsh"
+# brew "bash"
+# Use this over one shipped with MacOS or from a rbenv equivilent?
+# brew "ruby"
+# brew "git"
+# By default, binaries installed by gem will be placed into:
+#     $(brew --prefix)/lib/ruby/gems//bin
+# You may want to add this to your PATH.
+# brew "tree"
+# brew "nvm"
+# brew "cocoapods"
+# brew "wget"
+# brew "zsh-completions"
+#To load Zsh completions, add the following to your .zschrc:
+#source $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
+# brew "bash-completion"
+# brew "lame"
+# brew "gradle"
+# brew "maven"
+# brew "ant"
+# cask "android-studio"
+# cask "android-platform-tools"
+# cask "karabiner-elements"
+# cask "google-chat" # Install if on work machine
+# cask "google-drive-file-stream" # Install if on work machine
+# cask "karabiner-elements"
+# cask "java"
+# cask "oracle-jdk"
+# cask "google-chrome"
+# cask "ivpn"
+# cask "androidtool"
+# cask "synergy"

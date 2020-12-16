@@ -4,6 +4,7 @@
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
+echo "======= Beginning Script ======="
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
@@ -11,12 +12,14 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `macos.sh` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
+echo "======= Setting computer names ======="
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "0x6269676773"
-sudo scutil --set HostName "0x6269676773"
-sudo scutil --set LocalHostName "0x6269676773"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6269676773"
+echo "Enter desired computer alias:"
+read computer_name
+sudo scutil --set ComputerName $computer_name
+sudo scutil --set HostName $computer_name
+sudo scutil --set LocalHostName $computer_name
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computer_name
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
@@ -35,7 +38,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
-
+echo "======= Trackpad, mouse keyboard, bluetooth and input script ======="
 # Configure Keyboard shortcuts
 sudo cp -rf ~/mac_config/configuration/com.apple.symbolichotkeys.plist ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
@@ -86,7 +89,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 ###############################################################################
 # Dock, Dashboard                                                             #
 ###############################################################################
-
+echo "======= Dock/Dashboard Script ======="
 # Enable autohide on Dock
 defaults write com.apple.dock autohide -bool true
 # Set magnification to true
@@ -115,7 +118,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 ###############################################################################
 # Language and Locale                                                         #
 ###############################################################################
-
+echo "======= Language/Locale Script ======="
 # Set language and text formats
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
@@ -132,12 +135,9 @@ defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
 ###############################################################################
 # Screen, Energy Saving, Hot Corners                                          #
 ###############################################################################
-
+echo "======= Screensaver/Hot corners Script ======="
 # Set screensaver idle time to 1 hour
 defaults -currentHost write com.apple.screensaver idleTime -int 3600
-
-# Wallpaper
-wallpaper 'resources/wallpaper.jpg'
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -176,7 +176,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 ###############################################################################
 # Finder, Safari, Mac App Store                                               #
 ###############################################################################
-
+echo "======= Finder, safari and app store Script ======="
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
@@ -244,13 +244,13 @@ defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 # Zoom on tapping title bar 
 defaults write -g AppleActionOnDoubleClick -string "Maximize"
 
-. ~/mac_config/configuration/finder_sidebar.sh
-. ~/mac_config/configuration/dock.sh
+# . ~/mac_config/configuration/finder_sidebar.sh
+# . ~/mac_config/configuration/dock.sh
 
 ###############################################################################
 # Configure System Menu Bar                                                   #
 ###############################################################################
-
+echo "======= System menu bar Script ======="
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
@@ -277,81 +277,48 @@ defaults write com.apple.menuextra.clockFlashDateSeparators -bool false
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 ###############################################################################
-# Transmission.app                                                            #
-###############################################################################
-
-# Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
-
-# Use `~/Downloads` to store completed downloads
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
-
-# Don’t prompt for confirmation before removing non-downloading active transfers
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
-
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
-# IP block list.
-# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-
-# Randomize port on launch
-defaults write org.m0k.transmission RandomPort -bool true
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
-
+echo "======= Photos Script ======="
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Setup Command line tools for the next tasks                                 #
 ###############################################################################
+echo "======= xcode-select Script ======="
 sudo xcode-select --install
 
 ###############################################################################
 # Gems                                                                        #
 ###############################################################################
-
+echo "======= Gems Script ======="
+sudo gem install cocoapods
 sudo gem install cocoapods-deintegrate
 
 ###############################################################################
 # Zsh                                                                         #
 ###############################################################################
-
+echo "======= Zsh Script ======="
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+# # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+# rm -rf $HOME/.zshrc
+# ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 ###############################################################################
 # Homebrew, Apps, Utilities, and Shell                                        #
 ###############################################################################
+echo "======= Homebrew/Apps/Utilities/Shell Script ======="
+# sudo chown -R $(whoami) /usr/local/share/man/man8
 
-sudo chown -R $(whoami) /usr/local/share/man/man8
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-brew bundle
+# brew bundle
 
 # Switch Zsh to the version installed by brew
-sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-chsh -s /usr/local/bin/zsh
+# sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+# chsh -s /usr/local/bin/zsh
 
 # Install latest node via NVM
 nvm install node
@@ -360,51 +327,43 @@ nvm install node
 # Configure Visual Studio	                                                  #
 ###############################################################################
 
-ln -s ~/.dotfiles/VSCode/* ~/Library/Application\ Support/Code/User/
-vscode-config.sh
-vscode-sourcekit-lsp.sh
+# ln -s ~/.dotfiles/VSCode/* ~/Library/Application\ Support/Code/User/
+# vscode-config.sh
+# vscode-sourcekit-lsp.sh
 
 ###############################################################################
 # Making directories		                                                  #
 ###############################################################################
-
+echo "======= Making projects dir ======="
 mkdir Projects
-mkdir 
-
-###############################################################################
-# Ruby Gems					                                                  #
-###############################################################################
-
-gem install cocoapods-deintegrate
 
 ###############################################################################
 # General Dotfiles			                                                  #
 ###############################################################################
 
-ln -s ~/mac_config/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/mac_config/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/mac_config/.dotfiles/Alfred.alfredpreferences ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences
+# ln -s ~/mac_config/.dotfiles/.zshrc ~/.zshrc
+# ln -s ~/mac_config/.dotfiles/.gitconfig ~/.gitconfig
+# ln -s ~/mac_config/.dotfiles/Alfred.alfredpreferences ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences
 
 ###############################################################################
 # Github + SSH 				                                                  #
 ###############################################################################
 
-. ~/mac_config/configuration/githubssh.sh
+# . ~/mac_config/configuration/githubssh.sh
 
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
-
-for app in "cfprefsd" \
-	"Dock" \
-	"Finder" \
-	"Photos" \
-	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
-	"SystemUIServer" \
-	"Transmission" \
-	"Terminal"; do
-	killall "${app}" &> /dev/null
-done
+# echo "======= Killing affected applications Script ======="
+# for app in "cfprefsd" \
+# 	"Dock" \
+# 	"Finder" \
+# 	"Photos" \
+# 	"Safari" \
+# 	"SizeUp" \
+# 	"Spectacle" \
+# 	"SystemUIServer" \
+# 	"Terminal"; do
+# 	killall "${app}" &> /dev/null
+# done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
