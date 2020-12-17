@@ -17,7 +17,7 @@ echo "======= Setting computer names ======="
 echo "Enter desired computer alias:"
 read computer_name
 sudo scutil --set ComputerName $computer_name
-sudo scutil --set HostName $computer_name
+sudo scutil --set HostName $computer_name/Users/stephenbiggerstaff/mac_config/configuration/macos.sh
 sudo scutil --set LocalHostName $computer_name
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computer_name
 
@@ -244,8 +244,16 @@ defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 # Zoom on tapping title bar 
 defaults write -g AppleActionOnDoubleClick -string "Maximize"
 
-# . ~/mac_config/configuration/finder_sidebar.sh
-# . ~/mac_config/configuration/dock.sh
+###############################################################################
+# Making directories		                                                  #
+###############################################################################
+echo "======= Making directories and setting up finder sidebar ======="
+mkdir Projects
+mkdir Web
+
+echo "running finder sidebar script"
+. ~/mac_config/configuration/finder_sidebar.sh
+echo "finished finder sidebar script"
 
 ###############################################################################
 # Configure System Menu Bar                                                   #
@@ -254,10 +262,7 @@ echo "======= System menu bar Script ======="
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \ 
-    "/System/Library/CoreServices/Menu Extras/Clock.menu" \
-    "/System/Library/CoreServices/Menu Extras/Displays.menu" \
-    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+	"/System/Library/CoreServices/Menu Extras/Battery.menu"
 
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.airplay" -bool true
@@ -312,38 +317,36 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "======= Homebrew/Apps/Utilities/Shell Script ======="
 # sudo chown -R $(whoami) /usr/local/share/man/man8
 
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+cd ~/mac_config/configuration
+brew bundle
 
-# brew bundle
+echo "configuring dock apps"
+sudo cp -rf ~/mac_config/configuration/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
+
 
 # Switch Zsh to the version installed by brew
 # sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
 # chsh -s /usr/local/bin/zsh
 
 # Install latest node via NVM
-nvm install node
+# nvm install node
 
 ###############################################################################
 # Configure Visual Studio	                                                  #
 ###############################################################################
 
-# ln -s ~/.dotfiles/VSCode/* ~/Library/Application\ Support/Code/User/
-# vscode-config.sh
-# vscode-sourcekit-lsp.sh
-
-###############################################################################
-# Making directories		                                                  #
-###############################################################################
-echo "======= Making projects dir ======="
-mkdir Projects
+ln -s ~/.dotfiles/VSCode/* ~/Library/Application\ Support/Code/User/
+vscode-config.sh
+vscode-sourcekit-lsp.sh
 
 ###############################################################################
 # General Dotfiles			                                                  #
 ###############################################################################
 
-# ln -s ~/mac_config/.dotfiles/.zshrc ~/.zshrc
-# ln -s ~/mac_config/.dotfiles/.gitconfig ~/.gitconfig
-# ln -s ~/mac_config/.dotfiles/Alfred.alfredpreferences ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences
+ln -s ~/mac_config/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/mac_config/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/mac_config/.dotfiles/Alfred.alfredpreferences ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences
 
 ###############################################################################
 # Github + SSH 				                                                  #
@@ -352,18 +355,6 @@ mkdir Projects
 # . ~/mac_config/configuration/githubssh.sh
 
 ###############################################################################
-# Kill affected applications                                                  #
+# Wrap up 					                                                  #
 ###############################################################################
-# echo "======= Killing affected applications Script ======="
-# for app in "cfprefsd" \
-# 	"Dock" \
-# 	"Finder" \
-# 	"Photos" \
-# 	"Safari" \
-# 	"SizeUp" \
-# 	"Spectacle" \
-# 	"SystemUIServer" \
-# 	"Terminal"; do
-# 	killall "${app}" &> /dev/null
-# done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
