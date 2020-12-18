@@ -63,6 +63,8 @@ cask "robo-3t"
 cask "steam"
 cask "origin"
 cask "plex"
+cask "firefox"
+cask "github"
 cask "google-backup-and-sync" # Comment if on work machine
 
 # Quicklook
