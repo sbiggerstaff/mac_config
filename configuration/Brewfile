@@ -124,6 +124,8 @@ mas "Microsoft Remote Desktop", id: 1295203466
 mas "Transporter", id: 1450874784
 mas "Pocket", id: 568494494
 mas "Amphetamine", id: 937984704
+mas "Speedtest", id: 1153157709
+mas "RocketSim", id: 1504940162
 
 # Safari Extensions
 mas "Save to Pocket", id: 1477385213
