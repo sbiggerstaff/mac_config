@@ -101,6 +101,7 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/":$
 
 alias ddnuke='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias ddopen='open ~/Library/Developer/Xcode/DerivedData'
+alias gitclean='for b in `git branch --merged | grep -v \*`; do git branch -D $b; done'
 
 alias youtube-dl-best='youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" '
 alias youtube-dl-480='youtube-dl -f "bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]" '
